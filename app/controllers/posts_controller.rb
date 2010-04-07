@@ -2,7 +2,11 @@ class PostsController < ApplicationController
   before_filter :require_admin, :except=>[:index, :show, :rss]
   
   def index
-    @posts = Post.tagged_with(params[:tag]).paginate(:page=>params[:page], :per_page=>10)
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).paginate(:page=>params[:page], :per_page=>10)
+    else
+      @posts = Post.paginate(:page=>params[:page], :per_page=>10)
+    end
   end
   
   def new
