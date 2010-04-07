@@ -1,0 +1,11 @@
+!!!
+%head
+	%title A New sheBe Blog
+	= auto_discovery_link_tag(:rss, rss_posts_url)
+	= stylesheet_link_tag :all, :cache => true
+%body#home
+	#container
+		= yield
+		#footer
+			%p.rights
+				Powered by sheBe

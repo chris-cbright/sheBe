@@ -1,0 +1,6 @@
+#header
+#content.entry
+	= render :partial=>"form"
+- if is_admin?
+	.admin
+		Administrator : Editing post

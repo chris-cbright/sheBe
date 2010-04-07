@@ -1,0 +1,13 @@
+#body		
+	- semantic_form_for @post do |f|
+		= f.input :title
+		= f.input :content_textile, :input_html=>{:cols=>49}
+		= f.input :tag_list, :as=>:string
+		= f.buttons
+#appendix
+	%p.tags
+		:textile
+			Notes:
+			* &lt;summary&gt;&lt;/summary&gt; is used for summaries
+			* Textile is used as engine, nifty tool "here":http://textism.com/tools/textile/
+			* Images must be uploaded somewhere else, could use "http://tinypic.com":http://tinypic.com

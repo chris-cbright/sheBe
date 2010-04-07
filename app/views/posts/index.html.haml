@@ -1,0 +1,31 @@
+#header
+	%p.thehook
+		Simple Heroku Blogging
+	%h1
+		= link_to "sheBe", about_path
+	%p.years
+		= link_to "everything"
+		= tag_link_list
+#body.index
+	- @posts.each do |post|
+		.published
+			%span.day
+				= post.created_at.strftime("%d")
+			= post.created_at.strftime("%b %Y")
+		.entry.bookmark
+			.summary
+				%h3
+					= link_to post.title, post_path(post)
+					&mdash;
+				= post.summary
+			%p.meta.caps
+				= tag_link_list(post)
+			- if post.more?
+				= link_to "(continue reading ...)", post_path(post)
+	.pagination
+		= will_paginate @posts	
+	- if is_admin?
+		.admin
+			Administrator : 
+			= link_to "new post", new_post_path
+	
