@@ -28,9 +28,7 @@ But you'll probably want to change the default admin cookie and password, otherw
 admin_cookie: "replace_this"
 admin_password: "replace_this"
 
-- Change admin_cookie to a hard to guess random string - if you like, go to script/console and enter:
-
-	ActiveSupport::SecureRandom.hex(16)
+- Change admin_cookie to a hard to guess random string - if you like, go to script/console and enter ActiveSupport::SecureRandom.hex(16) , then copy and paste into the file.
 
 - Change admin_password to your favourite password
 
