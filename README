@@ -80,7 +80,7 @@ Modify the view at /app/views/posts/show.html.haml, cutting and pasting your Dis
 			= link_to "View all posts", posts_path
 			or more posts on
 			= tag_link_list(@post)
-    #disqus_thread
+  #disqus_thread
 :javascript
      (function() {
      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
